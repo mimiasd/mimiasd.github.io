@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Auth2.0 - Mimiasd&#39;s experience</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mimiasd" />
+  <meta name="description" content="OAuth2.0 RFC 1. 简介 传统客户端-服务端认证模型中，是客户端用资源拥有者的证书去访问受限资源。而当资源拥有者把证书给第三方应用时，会出现以下问题和限制：" />
+<meta name="keywords" content="auth2" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.34" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/auth2/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Auth2.0" />
+<meta property="og:description" content="OAuth2.0 RFC 1. 简介 传统客户端-服务端认证模型中，是客户端用资源拥有者的证书去访问受限资源。而当资源拥有者把证书给第三方应用时，会出现以下问题和限制：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/auth2/" />
+
+
+
+<meta property="article:published_time" content="2018-02-28T17:59:26&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-02-28T17:59:26&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Auth2.0">
+<meta itemprop="description" content="OAuth2.0 RFC 1. 简介 传统客户端-服务端认证模型中，是客户端用资源拥有者的证书去访问受限资源。而当资源拥有者把证书给第三方应用时，会出现以下问题和限制：">
+
+
+<meta itemprop="datePublished" content="2018-02-28T17:59:26&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-28T17:59:26&#43;08:00" />
+<meta itemprop="wordCount" content="5261">
+
+
+
+<meta itemprop="keywords" content="auth," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Auth2.0"/>
+<meta name="twitter:description" content="OAuth2.0 RFC 1. 简介 传统客户端-服务端认证模型中，是客户端用资源拥有者的证书去访问受限资源。而当资源拥有者把证书给第三方应用时，会出现以下问题和限制："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">MIMIASD</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">MIMIASD</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Auth2.0</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-02-28 </span>
+        <div class="post-category">
+            
+              <a href="/categories/auth/"> auth </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#1-简介">1. 简介</a>
+<ul>
+<li><a href="#1-1-角色">1.1 角色</a></li>
+<li><a href="#1-2-协议流程">1.2 协议流程</a></li>
+<li><a href="#1-3-授权许可">1.3 授权许可</a>
+<ul>
+<li><a href="#1-3-1-授权码模式">1.3.1 授权码模式</a></li>
+<li><a href="#1-3-2-简化模式">1.3.2 简化模式</a></li>
+<li><a href="#1-3-3-资源拥有者密码模式">1.3.3 资源拥有者密码模式</a></li>
+<li><a href="#1-3-4-客户端证书模式">1.3.4 客户端证书模式</a></li>
+</ul></li>
+<li><a href="#1-4-访问令牌">1.4 访问令牌</a></li>
+<li><a href="#1-5-更新令牌">1.5 更新令牌</a></li>
+<li><a href="#1-6-tls-版本">1.6 TLS 版本</a></li>
+<li><a href="#1-7-http-重定向">1.7 HTTP 重定向</a></li>
+<li><a href="#1-8-互操作性">1.8 互操作性</a></li>
+<li><a href="#1-9-符号公约">1.9 符号公约</a></li>
+</ul></li>
+<li><a href="#2-客户端注册">2 客户端注册</a>
+<ul>
+<li><a href="#2-1-客户端类型">2.1 客户端类型</a></li>
+<li><a href="#2-2-客户端标志符">2.2 客户端标志符</a></li>
+<li><a href="#2-3-客户端授权">2.3 客户端授权</a>
+<ul>
+<li><a href="#2-3-1-客户端密码">2.3.1 客户端密码</a></li>
+<li><a href="#2-3-2-其他授权方法">2.3.2 其他授权方法</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<blockquote>
+<p><a href="https://tools.ietf.org/html/rfc6749">OAuth2.0 RFC</a></p>
+</blockquote>
+
+<h1 id="1-简介">1. 简介</h1>
+
+<p>　　传统客户端-服务端认证模型中，是客户端用资源拥有者的证书去访问受限资源。而当资源拥有者把证书给第三方应用时，会出现以下问题和限制：</p>
+
+<ul>
+<li><p>第三方应用要求储存该证书，以备后用，通常是一个明文密码。</p></li>
+
+<li><p>服务端需要支持密码认证，而密码认证的方式在安全方面存在与生俱来的缺点。</p></li>
+
+<li><p>第三方应用获得了过大的权限，导致资源拥有者无法限制首先资源的子集。</p></li>
+
+<li><p>资源拥有者不能撤回单个第三方应用，只能通过改变第三方应用的密码，收回所有第三方应用的权限。</p></li>
+
+<li><p>妥协任何第三方应用，就会给这个第三方应用的终端用户密码，以及密码关联的所有受保护资源。</p></li>
+</ul>
+
+<p>　　OAuth 引入了授权层，把资源所有者和客户端角色分开，来解决上面的问题。在 OAuth 中，客户端请求服务端的受限资源，并且被发一系列不同于资源拥有者的证书。</p>
+
+<p>　　客户端获得一个表示特定范围、生命周期和其他访问属性的字符串 - <code>token</code>，来代替直接使用资源拥有者的证书，访问受限资源。资源访问者允许后，通过授权服务器发放令牌给第三方客户端。客户端利用这个令牌来访问受限资源。</p>
+
+<p>　　例如，一个终端用户(资源拥有者)，可以授予一个打印服务(客户端)存储在相片分享服务器(资源服务器)上到受保护的照片，而不用把她的帐号和密码告诉打印服务。作为代替，她直接授权给被相片分享服务(认证服务器)信任的服务，认证服务器将分发特殊指派的证书(访问令牌)给打印服务器。</p>
+
+<p>　　该说明书用于 HTTP。基于其他协议的 OAuth，不在该说明书讨论范围内。</p>
+
+<h2 id="1-1-角色">1.1 角色</h2>
+
+<p>OAuth 定义了四个角色：</p>
+
+<ul>
+<li><p>资源拥有者(resource owner)</p>
+
+<ul>
+<li>有能力授予一个受限资源访问权限的实体。当资源拥有者是一个人时，它指代一个终端用户。</li>
+</ul></li>
+
+<li><p>资源服务器(resource server)</p>
+
+<ul>
+<li>储存着受保护资源的服务，有能力接收和响应，使用访问令牌的受保护资源请求。</li>
+</ul></li>
+
+<li><p>客户端(client)</p>
+
+<ul>
+<li>通过资源拥有者授权，代表资源拥有者发出对受限资源请求的一个应用。术语 &ldquo;client&rdquo; 不表示任何特殊的实现特性(例如：不管这个应用运行在服务器，桌面环境，或者其他设备上)。</li>
+</ul></li>
+
+<li><p>授权服务器(authorization server)</p>
+
+<ul>
+<li>在成功鉴定资源拥有者，并获得其授权后，授权服务发布访问令牌给客户端。</li>
+</ul></li>
+</ul>
+
+<h2 id="1-2-协议流程">1.2 协议流程</h2>
+
+<pre><code>+--------+                               +---------------+
+|        |--(A)- Authorization Request -&gt;|   Resource    |
+|        |                               |     Owner     |
+|        |&lt;-(B)-- Authorization Grant ---|               |
+|        |                               +---------------+
+|        |
+|        |                               +---------------+
+|        |--(C)-- Authorization Grant --&gt;| Authorization |
+| Client |                               |     Server    |
+|        |&lt;-(D)----- Access Token -------|               |
+|        |                               +---------------+
+|        |
+|        |                               +---------------+
+|        |--(E)----- Access Token ------&gt;|    Resource   |
+|        |                               |     Server    |
+|        |&lt;-(F)--- Protected Resource ---|               |
++--------+                               +---------------+
+             Figure 1: Abstract Protocol Flow
+</code></pre>
+
+<p>　　OAuth2.0 的步骤如下：</p>
+
+<ul>
+<li><p>( A ) 客户端请求资源拥有者授权。授权请求可以直接发送给资源拥有者，或者更好地，间接地通过一个中介授权服务器。</p></li>
+
+<li><p>( B ) 客户端获得一个授权，这是一个代表资源拥有者认可的证书，该证书使用本说明书定义的四种授权类型之一或扩展授权类型。认证授权类型取决于客户端请求授权的方法，以及授权服务器支持的类型。</p></li>
+
+<li><p>( C ) 客户端提交授权许可，请求一个通过授权服务器验证的访问令牌。</p></li>
+
+<li><p>( D ) 授权服务器认可客户端，并确认使授权许可，如果有效，则发放令牌。</p></li>
+
+<li><p>( E ) 客户端通过令牌访问受限资源。</p></li>
+
+<li><p>( F ) 资源服务器确认令牌，如果有效，则响应请求。</p></li>
+</ul>
+
+<h2 id="1-3-授权许可">1.3 授权许可</h2>
+
+<p>　　授权许可是一个代表资源拥有者授权的证书，用于获得访问令牌。该说明书定义四种许可类型 - 授权码模式、简化模式、资源拥有者密码模式和客户端证书模式，以及一个可扩展机制来定义额外的类型。</p>
+
+<h3 id="1-3-1-授权码模式">1.3.1 授权码模式</h3>
+
+<p>　　授权码通过一个客户端和资源拥有者之间的中介授权服务器获得。客户端把资源拥有者指向一个授权服务器(通过一个用户代理)，而授权服务器又反过来把资源拥有者带上授权码指向回客户端。</p>
+
+<p>　　在带上授权码反指向回客户端之前，授权服务器要验证资源拥有者的身份，并获得授权。因为资源拥有者之授权给授权服务器，所以资源拥有者的证书永远不会分享给客户端。</p>
+
+<p>　　授权码模式提供了一些重要的安全特性，比如授权给客户端，以及直接把访问令牌传给客户端，而不是传给可能泄露给包括资源拥有者的其他人的资源拥有者用户代理。</p>
+
+<h3 id="1-3-2-简化模式">1.3.2 简化模式</h3>
+
+<p>　　针对浏览器客户端优化的简化授权码模式。在简化模式中，客户端被直接发放一个访问令牌，而不是一个授权码。</p>
+
+<p>　　在简化授权模式流中发放一个访问令牌时，授权服务器不验证客户端的身份。在一些情境下，客户端的身份可以用重定向的 URI 来验证，这是被用来传递访问令牌给客户端的。访问令牌可能暴露给资源拥有者或者其他可以访问资源拥有者用户代理的应用。</p>
+
+<p>　　简化授权模式改进了一个客户端的响应和效率(例如浏览器应用)，因为它减少了获得访问令牌的来回请求数量。但这个好处必须与简化模式的安全性一起衡量。</p>
+
+<h3 id="1-3-3-资源拥有者密码模式">1.3.3 资源拥有者密码模式</h3>
+
+<p>　　密码模式(比如：用户和密码)可以直接当作授权码来获得访问令牌。这个证书只适用于客户端和资源拥有者之间有很高信任度(例如：客户端是设备操作系统的一部分或是一个高优先级的应用)
+，或者其他授权类型不可用的情况下。</p>
+
+<p>　　即使该授权类型需要把客户端访问指向资源拥有者证书，而资源拥有者的诊所过户只需要一个请求来换取访问令牌。该类型可以避免客户端存储资源拥有者的证书，同一个交换一个长存的访问令牌或更新令牌。</p>
+
+<h3 id="1-3-4-客户端证书模式">1.3.4 客户端证书模式</h3>
+
+<p>　　当受限资源在客户端的控制之下，或受限资源预先安排给了访问服务器。客户端代表它自己来访问受限资源。</p>
+
+<h2 id="1-4-访问令牌">1.4 访问令牌</h2>
+
+<p>　　访问受限资源的证书。是发放给客户端代表一个认证的字符串。该字符串对于客户端是不透明的。令牌代表特定的访问范围和期间，由资源拥有者授予，资源服务器和授权服务器执行。</p>
+
+<p>　　令牌可能以一种可证实的方式指示一个可以取回认证信息或自包涵认证信息的标志符(例如：令牌字符串由一些数据和一个签名组成)。</p>
+
+<p>　　访问令牌提供一个抽象层，代替带有被资源服务器理解的单一令牌的不同认证设计(例如：用户名和密码)。这种抽象使发布访问令牌比使用它们的授权许可更严格，同时消除了资源服务器去理解大范围认证方法的需求。</p>
+
+<p>　　访问令牌可以有不同的格式、结构和利用方法(例如：加密属性)，这取决于资源服务器的安全需要。令牌的属性和保护资源的方法，可以参考<a href="https://tools.ietf.org/html/rfc6750">RFC6750</a>。</p>
+
+<h2 id="1-5-更新令牌">1.5 更新令牌</h2>
+
+<p>　　更新令牌用户获得访问令牌。授权服务器发放更新令牌给客户端，当访问令牌失效或过期后，用于获得新的访问令牌，或者用于获取一样或更小范围的额外访问令牌。更新令牌对于授权服务器是可选的。如果授权服务器发放了一个更新令牌，那么它在发布一个访问令牌时已被包含。</p>
+
+<p>　　不同于访问令牌，更新令牌只给授权服务器，而永远不会给资源服务器。</p>
+
+<pre><code>+--------+                                             +---------------+
+|        |--( A )------- Authorization Grant ---------&gt;|               |
+|        |                                             |               |
+|        |&lt;-( B )----------- Access Token -------------|               |
+|        |               &amp; Refresh Token               |               |
+|        |                                             |               |
+|        |                              +----------+   |               |
+|        |--( C )---- Access Token ----&gt;|          |   |               |
+|        |                              |          |   |               |
+|        |&lt;-( D )- Protected Resource --| Resource |   | Authorization |
+| Client |                              |  Server  |   |     Server    |
+|        |--( E )---- Access Token ----&gt;|          |   |               |
+|        |                              |          |   |               |
+|        |&lt;-( F )- Invalid Token Error -|          |   |               |
+|        |                              +----------+   |               |
+|        |                                             |               |
+|        |--( G )----------- Refresh Token -----------&gt;|               |
+|        |                                             |               |
+|        |&lt;-( H )----------- Access Token -------------|               |
++--------+           &amp; Optional Refresh Token          +---------------+
+
+            Figure 2: Refreshing an Expired Access Token
+</code></pre>
+
+<p>　　图 2 所示的流程如下：</p>
+
+<ul>
+<li><p>( A ) 客户端向授权服务器提供一个授权认证，要求其验证，然后返回一个访问令牌。</p></li>
+
+<li><p>( B ) 授权服务器鉴定客户端身份，验证授权认证，如果有效，则发放一个访问令牌和更新令牌。</p></li>
+
+<li><p>( C ) 客户端提供访问令牌，请求受限资源。</p></li>
+
+<li><p>( D ) 资源服务器验证访问令牌，如果有效，则响应请求。</p></li>
+
+<li><p>( E ) 重复步骤( C )和( D )直到访问令牌过期。如果客户端知道了访问令牌过期，则跳到步骤( G )；否则，它会继续下一个受限资源请求。</p></li>
+
+<li><p>( F ) 当访问令牌无效时，资源服务器返回一个令牌无效错误。</p></li>
+
+<li><p>( G ) 客户端通过提供更新令牌给授权服务器验证，请求一个新的访问令牌。客户端认证请求基于客户端类型和授权服务器策略。</p></li>
+
+<li><p>( H ) 授权服务器鉴定客户端身份，验证更新令牌，如果有效，则发放一个新的访问令牌(或者，可选的，方法一个新的更新令牌)。</p></li>
+</ul>
+
+<h2 id="1-6-tls-版本">1.6 TLS 版本</h2>
+
+<p>　　不论何时安全传输层协议(TLS)被该说明书使用，合适的TLS版本都是因时而异的，基于广泛的部署和已知的安全缺陷。</p>
+
+<h2 id="1-7-http-重定向">1.7 HTTP 重定向</h2>
+
+<p>　　这个说明书广泛使用了 HTTP 重定向，客户端或认证服务器把资源拥有者的用户代理指向其他目的地。该说明书使用的 302 状态码，其他任何通过客户代理实现的重定向方法都是可行的，这些都是实现细节。</p>
+
+<h2 id="1-8-互操作性">1.8 互操作性</h2>
+
+<p>　　OAuth2.0 提供了一个丰富并具有良好定义安全属性的授权框架。然而，作为一个丰富高可扩展，并具有许多可选组件的框架，该说明书好像在生产一个大范围不可互操的实现。</p>
+
+<p>　　另外，该说明书让一些必须组件部分或全部未定义(比如：客户端注册、授权服务器功能、终端发现)。没有了这些模块，客户端必须手工和特别地根据指定的授权服务器和资源服务器来配置，以此获得互操性。</p>
+
+<h2 id="1-9-符号公约">1.9 符号公约</h2>
+
+<p>　　<a href="https://tools.ietf.org/html/rfc2119">RFC 2119</a></p>
+
+<h1 id="2-客户端注册">2 客户端注册</h1>
+
+<p>　　初始化协议之前，需要把客户端注册到授权服务器。注册的方法不是本说明书讨论的范围，但一般是终端用户通过 HTML 注册表来交互。</p>
+
+<p>　　客户端注册不要求客户端和授权服务器之间的直接交互。当被授权服务器支持时，注册可以依赖于其他手段来建立信任和获取客户端属性(例如：重定向 URI，客户端类型)。例如，注册可以通过使用自发放或第三方发放声明，或授权服务器通过受信的通道进行客户端发现来完成。</p>
+
+<p>　　当注册一个客户端时，客户端开发者需要：</p>
+
+<ul>
+<li><p>选定客户端类型。</p></li>
+
+<li><p>提供客户端重定向 URIs。</p></li>
+
+<li><p>包括其他被授权服务器需要的信息(比如：应用名，网站、描述、商标、可用的合法术语)。</p></li>
+</ul>
+
+<h2 id="2-1-客户端类型">2.1 客户端类型</h2>
+
+<p>　　OAuth 定义了两种客户端类型，基于授权服务器的安全认证能力(例如：例如控制客户端证书的机密性)：</p>
+
+<ul>
+<li><p>保密的</p>
+
+<ul>
+<li>客户端有能力控制它们证书的保密性(例如：客户端是现在一个拥有严格访问证书的安全服务器上)，或者使用其他安全的客户端认证方法。</li>
+</ul></li>
+
+<li><p>公开的</p>
+
+<ul>
+<li>客户端不能控制它们证书的保密性(例如：客户端运行在一个被资源使用者使用的设备上，比如一个本地安装应用或基于浏览器的应用)，或通过其他任何方法。</li>
+</ul></li>
+</ul>
+
+<p>　　客户端类型的设计是基于授权服务器所定义的安全认证和可接受的证书暴露等级来确定的。授权服务器不应该假设客户端的类型。</p>
+
+<p>　　客户端的实现可能是一个分布式的组件集，每一个都有不同的客户端类型和安全内容(例如：一个分布式客户端有保密的基于服务器组件和公开的基于浏览器的组件)。如果授权服务器部队这些客户端提供支持或不提供相关客户端注册，那么客户端应该分别注册它的每一个组件。</p>
+
+<p>　　该说明书被设计来包括以下的客户端配置：</p>
+
+<ul>
+<li><p>web 应用</p>
+
+<ul>
+<li>是一个运行在 web 服务器上的保密客户端。资源拥有者通过一个设备上的用户代理渲染的 HTML 用户接口访问客户端。客户端证书以及任何发放给客户端的访问令牌被存储在 web 服务器上，不暴露给资源拥有者。</li>
+</ul></li>
+
+<li><p>基于用户代理的应用</p>
+
+<ul>
+<li>是一个公开的客户端，客户端码从 web 服务器下载，运行在一个资源拥有者设备的用户代理上(例如：浏览器)。对于资源拥有者，协议数据和证书很容易获得(通常是可见的)。当这种应用在用户代理里面时，认证请求可以无缝使用用户代理的功能。</li>
+</ul></li>
+
+<li><p>原生应用</p>
+
+<ul>
+<li>是一个运行在资源拥有者设备上的公开客户端。资源拥有者可以获得协议的数据和证书。它假定应用中所有的客户端证书都可以被提取。另一方面，动态发放的证书。比如访问令牌或更新令牌，可以得到一个可接受级别的保护。至少这些证书对于那些可以交互的不怀好意的服务器是受保护的。在一些平台上，这些证书对于在同意设备上的服务是受保护的。</li>
+</ul></li>
+</ul>
+
+<h2 id="2-2-客户端标志符">2.2 客户端标志符</h2>
+
+<p>　　授权服务器发放给注册了的客户端一个客户端标志符 &ndash; 一个唯一代表客户端提供的注册信息的唯一字符串。客户端标志符不是一个密钥；它被暴露给资源拥有者，且不能被单独使用用于客户端认证。客户端标志符对于授权服务器是唯一的。</p>
+
+<p>　　客户端标志符字符串的长度没有在该说明书被规定。客户端应该避免去假定字符串的长度。授权服务器应该文档化每一个它发放的标志符长度。</p>
+
+<h2 id="2-3-客户端授权">2.3 客户端授权</h2>
+
+<p>　　如果客户端类型是保密的，那么应该根据授权服务器的需求，在客户端和授权服务器之间创建一个合适的授权方法。 授权服务器应该接受任何形式客户端授权的安全要求。</p>
+
+<p>　　保密客户端一般会发放(或建立)一系列授权服务器验证的客户端证书(例如：密码，公/私密钥对)。</p>
+
+<p>　　授权服务器可能会与公开客户端建立一个客户端授权方法。然而，授权服务器不能依赖于客户端授权来验证客户端身份。</p>
+
+<p>　　客户端不能在一个请求中使用多个授权方法。</p>
+
+<h3 id="2-3-1-客户端密码">2.3.1 客户端密码</h3>
+
+<p>　　拥有密码的客户端可能会使用 HTTP 基础授权方案<a href="https://tools.ietf.org/html/rfc2617">RFC2617</a>来让授权服务器验证。客户端标志符通过&rdquo;application/x-www-form-urlencoded&rdquo;算法来进行编码，这个编码值作为用户名；客户端密码使用同样的算法编码，作为密码。授权服务器必须对发放客户端密码的授权客户端支持 HTTP 基础授权方案。</p>
+
+<p>　　例如：</p>
+
+<blockquote>
+<p>Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3</p>
+</blockquote>
+
+<p>　　另外，授权服务器可能支持把客户端证书包含在请求体中，通过使用下面的参数：</p>
+
+<ul>
+<li><p>client_id</p>
+
+<ul>
+<li>必须的。注册过程中发放给客户端的标志符。</li>
+</ul></li>
+
+<li><p>client_secret</p>
+
+<ul>
+<li>必须的。客户端密钥。客户端可能省略该参数，如果客户端密钥是空的字符串。</li>
+</ul></li>
+</ul>
+
+<p>　　使用两个参数把客户端证书包含在请求体中是不被推荐的，需要被限制在客户端不能直接利用 HTTP 基本授权方案上。参数只能在请求体中被传输，不能被包含在请求 URI 中。</p>
+
+<p>　　例如，一个使用参数体的更新访问令牌的请求：</p>
+
+<blockquote>
+<p>POST /token HTTP/1.1</p>
+
+<p>Host: server.example.com</p>
+
+<p>Content-Type: application/x-www-form-urlencoded</p>
+
+<p>grant_type=refresh_token&amp;refresh_token=tGzv3JOkF0XG5Qx2TlKWIA&amp;client_id=s6BhdRkqt3&amp;client_secret=7Fjfp0ZBr1KtDRbnfVdmIw</p>
+</blockquote>
+
+<p>　　授权服务器在发送密码认证请求时，必须需要使用 TLS。</p>
+
+<p>　　当这个客户端授权方法涉及到一个密码时，授权服务器必须保护终端节点，以免被使用该密码进行蛮力攻击。</p>
+
+<h3 id="2-3-2-其他授权方法">2.3.2 其他授权方法</h3>
+
+<p>授权服务器可能支持其他任何满足需求的 HTTP 授权方案。当使用其他授权方法时，授权服务器必须在客户端标志符(注册记录)和授权方案之间建立一个映射。</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mimiasd</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-02-28</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/auth/">auth</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/grammar-club/">
+            <span class="next-text nav-default">Grammar Club</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:thanatos_y@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mimiasd" class="iconfont icon-github" title="github"></a>
+  
+    
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+	由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+	主题 - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mimiasd</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
