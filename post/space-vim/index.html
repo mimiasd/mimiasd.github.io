@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>VimOremacs - Mimiasd&#39;s experience</title>
+  <title>Space Vim - Mimiasd&#39;s experience</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,10 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="mimiasd" />
-  <meta name="description" content="vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs" />
-<meta name="keywords" content="tool" />
+<meta name="author" content="mimiasd" /><meta name="description" content="这篇文章主要介绍space-vim的安装" />
 
+  <meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -29,7 +28,7 @@
 <meta name="generator" content="Hugo 0.38-DEV" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/vimoremacs/" />
+<link rel="canonical" href="http://localhost:1313/post/space-vim/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,20 +48,16 @@
 
 
 
-<meta property="og:title" content="VimOremacs" />
-<meta property="og:description" content="vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs" />
+<meta property="og:title" content="Space Vim" />
+<meta property="og:description" content="这篇文章主要介绍space-vim的安装" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/vimoremacs/" />
+<meta property="og:url" content="http://localhost:1313/post/space-vim/" />
 
 
 
-<meta property="article:published_time" content="2018-03-04T16:43:42&#43;08:00"/>
+<meta property="article:published_time" content="2018-03-04T18:06:56&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-03-04T16:43:42&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-03-04T18:06:56&#43;08:00"/>
 
 
 
@@ -70,20 +65,24 @@
 
 
 
-<meta itemprop="name" content="VimOremacs">
-<meta itemprop="description" content="vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs">
-
-
-<meta itemprop="datePublished" content="2018-03-04T16:43:42&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-04T16:43:42&#43;08:00" />
-<meta itemprop="wordCount" content="631">
 
 
 
-<meta itemprop="keywords" content="vim,emacs,editor," />
+
+<meta itemprop="name" content="Space Vim">
+<meta itemprop="description" content="这篇文章主要介绍space-vim的安装">
+
+
+<meta itemprop="datePublished" content="2018-03-04T18:06:56&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-04T18:06:56&#43;08:00" />
+<meta itemprop="wordCount" content="212">
+
+
+
+<meta itemprop="keywords" content="space-vim,vim,editor," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="VimOremacs"/>
-<meta name="twitter:description" content="vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs"/>
+<meta name="twitter:title" content="Space Vim"/>
+<meta name="twitter:description" content="这篇文章主要介绍space-vim的安装"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -146,13 +145,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">VimOremacs</h1>
+      <h1 class="post-title">Space Vim</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-03-04 </span>
         <div class="post-category">
             
-              <a href="/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
+              <a href="/categories/vim/"> vim </a>
             
           </div>
         
@@ -168,7 +167,16 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#vim-or-emacs">vim or emacs</a></li>
+<li><a href="#vim-安装">vim 安装</a>
+<ul>
+<li><a href="#安装依赖包">安装依赖包</a></li>
+<li><a href="#开始安装">开始安装</a></li>
+</ul></li>
+<li><a href="#space-vim-安装">space-vim 安装</a>
+<ul>
+<li><a href="#安装-space-vim">安装 space-vim</a></li>
+<li><a href="#安装字体">安装字体</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -178,41 +186,70 @@
     <div class="post-content">
       
 
-<h1 id="vim-or-emacs">vim or emacs</h1>
-
-<p>　　最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。</p>
-
-<p>　　开始带着很大的热情学习<a href="https://github.com/zilongshanren">@zilongshanren</a>的<a href="https://github.com/emacs-china/Spacemacs-rocks">Spacemacs-rocks</a>视频。但随着正式工作的深入，发现自己并不能分出大量时间来学习 emacs 的使用，以及 emacs 的学习难度。这使我开始思考现在到底有没有必要转向 emacs，如果强行转过去，花了大量时间又影响了工作怎么办？</p>
-
-<p>　　后来发现了<a href="http://vim.liuchengxu.org/">space-vim</a>，但心里总是丢不掉<a href="http://spacemacs.org/">spacemacs</a>，陷入纠结。</p>
-
-<p>　　当我再一次阅读<a href="https://github.com/redguardtoo">@redguardtoo</a>的<a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">mastering-emacs-in-one-year-guide</a>时，在其结语中突然找到了自己现在该怎么做。</p>
-
 <blockquote>
-<p>再强调一下本文最重要的观点:<br />
-- 以 <em>解决实际问题</em> 产生的兴趣引导。<br />
-- <em>完全照抄世界顶尖高手如 Steve Purcell 的配置</em>, 尽量避免自己写 Lisp。<br />
-- 给高手报 bug 就是最好的学习。<br />
-- 学习 Emacs 和 <em>学任何专业技能 (拉小提琴, 解数学题) 的方法论都是一样的</em>, 请参考<a href="http://book.douban.com/subject/4726323/">一万小时天才理论</a>。</p>
-
-<blockquote>
-<p>关键是你以严肃的态度把其当作专业技能学习。<br />
-很多人之所以不赞同我的核心观点, 是因为内心深处还有把 Emacs 当玩具来炫耀 &ldquo;我有多酷&rdquo; 的意识。<br />
-Emacs 强大到可以作为另类娱乐来博眼球. 但本质是专业人士使用的神器。</p>
+<p>这篇文章主要介绍<a href="https://github.com/liuchengxu/space-vim"><code>space-vim</code></a>的安装</p>
 </blockquote>
 
-<p>打个比方, 职业杀手对于刀只关心两件事:<br />
-1. 高效地杀人<br />
-2. 任何环境下都可靠</p>
+<h1 id="vim-安装">vim 安装</h1>
+
+<p>对于 vim 的安装，我一般选择源码安装在<code>/usr/local/</code>目录下</p>
+
+<h2 id="安装依赖包">安装依赖包</h2>
+
+<p>vim 安装时可能依赖于以下包：</p>
 
 <blockquote>
-<p>刀的装饰是否漂亮或技巧是否自己原创对他并不重要.</p>
+<p>libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 lua5.1-dev git</p>
 </blockquote>
 
-<p>Emacs 就是那把刀.</p>
-</blockquote>
+<h2 id="开始安装">开始安装</h2>
 
-<p>　　没错，现在我急于使用 emacs 带有很大的装逼成分。但现在我的主要任务是获得一把适合自己的刀，使自己成为一个编程方面的专业人士和职业选手，从现在的情况来看，emacs 暂时不是，而已经使用了半年的 vim 才是。</p>
+<p>从 github 上下载 vim 的 master 分支：</p>
+
+<pre><code>cd /usr/local &amp;&amp; wget https://github.com/vim/vim/archive/master.zip
+</code></pre>
+
+<p>解压 master.zip，并进入 src 目录：</p>
+
+<pre><code>unzip master.zip &amp;&amp; cd vim-master/src
+</code></pre>
+
+<p>配置 vim 支持的特性：</p>
+
+<pre><code>./configure --with-features=huge \
+            -enable-multibyte \
+            -enable-rubyinterp \
+            -enable-pythoninterp \
+            -with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+            -enable-perlinterp \
+            -enable-luainterp \
+            -enable-cscope
+</code></pre>
+
+<p>然后编译安装：</p>
+
+<pre><code>make &amp;&amp; make install
+</code></pre>
+
+<h1 id="space-vim-安装">space-vim 安装</h1>
+
+<h2 id="安装-space-vim">安装 space-vim</h2>
+
+<pre><code>bash &lt;(curl -fsSL https://git.io/vFUhE) 
+</code></pre>
+
+<h2 id="安装字体">安装字体</h2>
+
+<p>下载 <a href="https://github.com/powerline/fonts">powerline fonts</a> 字体：</p>
+
+<pre><code>git clone https://github.com/powerline/fonts.git ~/.fonts
+sh ~/.fonts/install.sh
+</code></pre>
+
+<p>powerline font 安装完成后，在 .spacevim 中启用字体：</p>
+
+<pre><code>let g:airline_powerline_fonts=1
+</code></pre>
 
     </div>
 
@@ -236,9 +273,9 @@ Emacs 强大到可以作为另类娱乐来博眼球. 但本质是专业人士使
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/vim/">vim</a>
+          <a href="/tags/space-vim/">space-vim</a>
           
-          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/vim/">vim</a>
           
           <a href="/tags/editor/">editor</a>
           
@@ -247,14 +284,14 @@ Emacs 强大到可以作为另类娱乐来博眼球. 但本质是专业人士使
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/space-vim/">
+          <a class="prev" href="/post/private-vim/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Space Vim</span>
+            <span class="prev-text nav-default">Private Vim</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/auth2/">
-            <span class="next-text nav-default">Auth2.0</span>
+          <a class="next" href="/post/vimoremacs/">
+            <span class="next-text nav-default">VimOremacs</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
