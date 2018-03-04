@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-03-04T20:29:45&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-04T20:29:45&#43;08:00" />
-<meta itemprop="wordCount" content="574">
+<meta itemprop="wordCount" content="611">
 
 
 
@@ -382,8 +382,20 @@ cd ~/.vim/bundle/YouCompleteMe
 
 git submodule update --init --recursive 
 
-./install.py --all
+./install.py --clang-completer --go-completer --js-completer
 </code></pre>
+
+<p>当安装完成后打开 vim，可能出现以下错误：</p>
+
+<blockquote>
+<p>ImportError: libtinfo.so.5 no exsit</p>
+</blockquote>
+
+<p>解决方法是：</p>
+
+<blockquote>
+<p>ln -s /lib64/libncurses.so.5 /lib64/libtinfo.so.5</p>
+</blockquote>
 
     </div>
 
