@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Feb 2018 17:59:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 16:43:42 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VimOremacs</title>
+      <link>http://localhost:1313/post/vimoremacs/</link>
+      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/vimoremacs/</guid>
+      <description>vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs</description>
+    </item>
     
     <item>
       <title>Auth2.0</title>

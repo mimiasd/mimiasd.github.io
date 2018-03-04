@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on Mimiasd&#39;s experience</title>
+    <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on Mimiasd&#39;s experience</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Mar 2018 16:43:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VimOremacs</title>
+      <link>http://localhost:1313/post/vimoremacs/</link>
+      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/vimoremacs/</guid>
+      <description>vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs</description>
+    </item>
+    
+  </channel>
+</rss>

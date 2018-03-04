@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Editor</title>
+      <link>http://localhost:1313/tags/editor/</link>
+      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>http://localhost:1313/tags/emacs/</link>
+      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>English</title>
       <link>http://localhost:1313/tags/english/</link>
       <pubDate>Wed, 28 Feb 2018 11:11:40 +0800</pubDate>
@@ -35,6 +53,15 @@
       <pubDate>Wed, 28 Feb 2018 11:11:40 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/grammar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://localhost:1313/tags/vim/</link>
+      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/vim/</guid>
       <description></description>
     </item>
     

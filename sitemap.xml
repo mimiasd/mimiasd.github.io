@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/vimoremacs/</loc>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/auth2/</loc>
     <lastmod>2018-02-28T17:59:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +45,20 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/editor/</loc>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/emacs/</loc>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/english/</loc>
     <lastmod>2018-02-28T11:11:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -60,14 +81,14 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2018-02-28T17:59:26+08:00</lastmod>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-02-28T17:59:26+08:00</lastmod>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -75,6 +96,20 @@
   <url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2018-02-28T17:59:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vim/</loc>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2018-03-04T16:43:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
