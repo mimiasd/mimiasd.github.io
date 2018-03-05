@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Editor on Mimiasd&#39;s experience</title>
-    <link>http://localhost:1313/tags/editor/</link>
-    <description>Recent content in Editor on Mimiasd&#39;s experience</description>
+    <title>Vim on Mimiasd&#39;s experience</title>
+    <link>http://localhost:1313/categories/vim/</link>
+    <description>Recent content in Vim on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Mar 2018 20:29:45 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,15 +27,6 @@
       
       <guid>http://localhost:1313/post/space-vim/</guid>
       <description>这篇文章主要介绍space-vim的安装 vim 安装 对于 vim 的安装，我一般选择源码安装在/usr/local/目录下 安装依赖包 vim 安装时可能依赖于以下</description>
-    </item>
-    
-    <item>
-      <title>VimOremacs</title>
-      <link>http://localhost:1313/post/vimoremacs/</link>
-      <pubDate>Sun, 04 Mar 2018 16:43:42 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/vimoremacs/</guid>
-      <description>vim or emacs 最近一直在纠结自己的 vim 配置使用起来有很多不足，想换成 emacs。 开始带着很大的热情学习@zilongshanren的Spacemacs</description>
     </item>
     
   </channel>
