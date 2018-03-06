@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="mimiasd" />
-  <meta name="description" content="概述 这是我个人的 vim 配置过程。 下面是各个插件的安装。 Vundle 首先安装 vim 插件管理器 Vundle： git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后在 .vimrc 中添加下面的 Vundle 配置： set nocompatible &amp;quot; be iMproved, required filetype off &amp;quot;" />
+  <meta name="description" content="概述 这是我个人的 vim 配置过程。 对于 vimscript，可以参考使用脚本编写 Vim 编辑器和 Vimscript 编程指南。 安装的各类插件 Vundle 首先安装 vim 插件管理器 Vundl" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -50,7 +50,7 @@
 
 
 <meta property="og:title" content="Private Vim" />
-<meta property="og:description" content="概述 这是我个人的 vim 配置过程。 下面是各个插件的安装。 Vundle 首先安装 vim 插件管理器 Vundle： git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后在 .vimrc 中添加下面的 Vundle 配置： set nocompatible &quot; be iMproved, required filetype off &quot;" />
+<meta property="og:description" content="概述 这是我个人的 vim 配置过程。 对于 vimscript，可以参考使用脚本编写 Vim 编辑器和 Vimscript 编程指南。 安装的各类插件 Vundle 首先安装 vim 插件管理器 Vundl" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/private-vim/" />
 
@@ -71,19 +71,19 @@
 
 
 <meta itemprop="name" content="Private Vim">
-<meta itemprop="description" content="概述 这是我个人的 vim 配置过程。 下面是各个插件的安装。 Vundle 首先安装 vim 插件管理器 Vundle： git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后在 .vimrc 中添加下面的 Vundle 配置： set nocompatible &quot; be iMproved, required filetype off &quot;">
+<meta itemprop="description" content="概述 这是我个人的 vim 配置过程。 对于 vimscript，可以参考使用脚本编写 Vim 编辑器和 Vimscript 编程指南。 安装的各类插件 Vundle 首先安装 vim 插件管理器 Vundl">
 
 
 <meta itemprop="datePublished" content="2018-03-04T20:29:45&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-04T20:29:45&#43;08:00" />
-<meta itemprop="wordCount" content="611">
+<meta itemprop="wordCount" content="1937">
 
 
 
 <meta itemprop="keywords" content="editor,vim," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Private Vim"/>
-<meta name="twitter:description" content="概述 这是我个人的 vim 配置过程。 下面是各个插件的安装。 Vundle 首先安装 vim 插件管理器 Vundle： git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后在 .vimrc 中添加下面的 Vundle 配置： set nocompatible &quot; be iMproved, required filetype off &quot;"/>
+<meta name="twitter:description" content="概述 这是我个人的 vim 配置过程。 对于 vimscript，可以参考使用脚本编写 Vim 编辑器和 Vimscript 编程指南。 安装的各类插件 Vundle 首先安装 vim 插件管理器 Vundl"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -168,27 +168,45 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#概述">概述</a>
+<li><a href="#概述">概述</a></li>
+<li><a href="#安装的各类插件">安装的各类插件</a>
 <ul>
 <li><a href="#vundle">Vundle</a></li>
-<li><a href="#nerdtree">nerdtree</a></li>
+<li><a href="#nerdtree">nerdtree</a>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#常用操作">常用操作</a></li>
+</ul></li>
+<li><a href="#nerdtree-git-plugin">nerdtree-git-plugin</a></li>
 <li><a href="#nerd-commenter">nerd-commenter</a></li>
-<li><a href="#ultisnips">ultisnips</a></li>
-<li><a href="#ctrlp">ctrlp</a></li>
-<li><a href="#vim-surround">vim-surround</a></li>
+<li><a href="#fzf">fzf</a>
+<ul>
+<li><a href="#常用操作-1">常用操作</a></li>
+</ul></li>
+<li><a href="#ack">ack</a>
+<ul>
+<li><a href="#常用操作-2">常用操作</a></li>
+</ul></li>
+<li><a href="#vim-surround">vim-surround</a>
+<ul>
+<li><a href="#常用操作-3">常用操作</a></li>
+</ul></li>
+<li><a href="#vim-repeat">vim-repeat</a></li>
 <li><a href="#vim-airline">vim-airline</a></li>
 <li><a href="#ctags">ctags</a></li>
 <li><a href="#tagbar">tagbar</a></li>
 <li><a href="#vim-easymotion">vim-easymotion</a></li>
 <li><a href="#vim-colors-solarized">vim-colors-solarized</a></li>
-<li><a href="#tabular">tabular</a></li>
 <li><a href="#rainbow">rainbow</a></li>
+<li><a href="#ultisnips">ultisnips</a></li>
+<li><a href="#tabular">tabular</a></li>
 <li><a href="#emmet-vim">emmet-vim</a></li>
 <li><a href="#vim-indent-guides">vim-indent-guides</a></li>
 <li><a href="#vim-go">vim-go</a></li>
 <li><a href="#gocode">gocode</a></li>
 <li><a href="#youcompleteme">YouCompleteMe</a></li>
 </ul></li>
+<li><a href="#常见问题">常见问题</a></li>
 </ul>
 </nav>
   </div>
@@ -200,20 +218,20 @@
 
 <h1 id="概述">概述</h1>
 
-<p>这是我个人的 vim 配置过程。</p>
+<p>　　这是我个人的 vim 配置过程。</p>
 
-<blockquote>
-<p>下面是各个插件的安装。</p>
-</blockquote>
+<p>　　对于 vimscript，可以参考<a href="https://www.ibm.com/developerworks/cn/linux/l-vim-script-1/index.html?ca=drs-">使用脚本编写 Vim 编辑器</a>和 <a href="https://www.gitbook.com/book/kenvifire/vimscript/details">Vimscript 编程指南</a>。</p>
+
+<h1 id="安装的各类插件">安装的各类插件</h1>
 
 <h2 id="vundle">Vundle</h2>
 
-<p>首先安装 vim 插件管理器 <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>：</p>
+<p>　　首先安装 vim 插件管理器 <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>：</p>
 
 <pre><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 </code></pre>
 
-<p>然后在 <code>.vimrc</code> 中添加下面的 Vundle 配置：</p>
+<p>　　然后在 <code>.vimrc</code> 中添加下面的 Vundle 配置：</p>
 
 <pre><code>set nocompatible              &quot; be iMproved, required
 filetype off                  &quot; required
@@ -245,23 +263,265 @@ filetype plugin indent on    &quot; required
 
 <h2 id="nerdtree">nerdtree</h2>
 
-<p>安装 <a href="https://github.com/scrooloose/nerdtree">nerdtree</a>：</p>
+<p>　　安装 <a href="https://github.com/scrooloose/nerdtree">nerdtree</a>：</p>
 
 <pre><code>git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 </code></pre>
 
+<h3 id="简介">简介</h3>
+
+<p>　　nerdtree 是一个文件系统探测器。通过这个插件，用户可以形象地浏览复杂的文件层次结构，快速打开文件浏览或编辑，以及进行基础的文件系统操作。</p>
+
+<p>　　具体可以参考<a href="http://aaronmoment.cn/nerdtree/">Aaron 的 nerdtree 配置</a>以及<a href="https://linux.cn/article-7424-1.html">如何优雅地使用 VIM 文件管理插件</a>。</p>
+
+<h3 id="常用操作">常用操作</h3>
+
+<ul>
+<li><p><code>&lt;Ctrl-e&gt;</code>：切换显示 NERDtree。</p></li>
+
+<li><p><code>&lt;Ctrl-w&gt;方向键</code>：切换窗口。</p></li>
+
+<li><p><code>&lt;leader&gt;e</code>：在 NERDtree 中找到当前文件的位置。</p></li>
+
+<li><p><code>:Bookmark [&lt;name&gt;]</code>：在当前目录或文件创建书签。</p></li>
+
+<li><p><code>:ClearBookmarks [&lt;name&gt;] 或 D</code>：删除相应书签。</p></li>
+
+<li><p><code>o 或 &lt;Enter&gt;</code>：打开文件、目录和书签。</p></li>
+
+<li><p><code>i</code>：竖屏分割打开一个新的文件窗口。</p></li>
+
+<li><p><code>s</code>：横屏分割打开一个新的文件窗口。</p></li>
+
+<li><p><code>P</code>：跳到根节点。</p></li>
+
+<li><p><code>m</code>：显示 NERD 树目录。</p></li>
+
+<li><p><code>I</code>：显示隐藏文件开关。</p></li>
+
+<li><p><code>B</code>：显示书签开关。</p></li>
+</ul>
+
+<h2 id="nerdtree-git-plugin">nerdtree-git-plugin</h2>
+
+<p>　　安装 <a href="https://github.com/Xuyuanp/nerdtree-git-plugin">nerdtree-git-plugin</a>：</p>
+
+<pre><code>1. Add Plugin 'Xuyuanp/nerdtree-git-plugin' to your vimrc file.
+2. Reload your vimrc or restart
+3. Run :BundleInstall
+</code></pre>
+
+<p>　　这是一个开箱即用的插件， 显示的符号配置如下：</p>
+
+<pre><code class="language-vimscript">let g:NERDTreeIndicatorMapCustom = {
+    \ &quot;Modified&quot;  : &quot;✹&quot;,
+    \ &quot;Staged&quot;    : &quot;✚&quot;,
+    \ &quot;Untracked&quot; : &quot;✭&quot;,
+    \ &quot;Renamed&quot;   : &quot;➜&quot;,
+    \ &quot;Unmerged&quot;  : &quot;═&quot;,
+    \ &quot;Deleted&quot;   : &quot;✖&quot;,
+    \ &quot;Dirty&quot;     : &quot;✗&quot;,
+    \ &quot;Clean&quot;     : &quot;✔︎&quot;,
+    \ 'Ignored'   : '☒',
+    \ &quot;Unknown&quot;   : &quot;?&quot;
+    \ }
+</code></pre>
+
 <h2 id="nerd-commenter">nerd-commenter</h2>
 
-<p>安装 <a href="https://github.com/scrooloose/nerdcommenter">nerd-commenter</a>：</p>
+<p>　　安装 <a href="https://github.com/scrooloose/nerdcommenter">nerd-commenter</a>：</p>
 
 <pre><code>1. Add Plugin 'scrooloose/nerdcommenter' to your vimrc file.
 2. Reload your vimrc or restart
 3. Run :BundleInstall
 </code></pre>
 
+<p>　　默认配置如下：</p>
+
+<pre><code>&lt;leader&gt;cc   加注释
+&lt;leader&gt;cu   解开注释
+
+&lt;leader&gt;c&lt;space&gt;  加上/解开注释, 智能判断
+&lt;leader&gt;cy        先复制, 再注解(p可以进行黏贴)
+</code></pre>
+
+<p>　　最终配置：</p>
+
+<pre><code>Bundle 'scrooloose/nerdcommenter'
+
+&quot; 注释的时候自动加个空格, 强迫症必配
+let g:NERDSpaceDelims = 1
+</code></pre>
+
+<h2 id="fzf">fzf</h2>
+
+<p>　　安装 <a href="https://github.com/junegunn/fzf.vim">fzf</a>来代替<a href="https://github.com/ctrlpvim/ctrlp.vim">ctrlp</a>，以此实现与 shell 终端的通用，可以参考<a href="https://blog.zfanw.com/fzf-vim-usage/">fzf.vim 用法</a>：</p>
+
+<pre><code>Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+Bundle 'junegunn/fzf.vim'
+</code></pre>
+
+<p>　　进行如下按键映射：</p>
+
+<pre><code>nnoremap &lt;silent&gt; &lt;C-p&gt; :Files&lt;CR&gt;
+</code></pre>
+
+<h3 id="常用操作-1">常用操作</h3>
+
+<ul>
+<li><code>Files [PATH]</code>：在 <code>PATH</code> 目录下进行查找，当前目录被映射成快捷键<code>&lt;Ctrl-P&gt;</code>。</li>
+</ul>
+
+<h2 id="ack">ack</h2>
+
+<p>　　安装 <a href="https://github.com/mileszs/ack.vim">ack.vim</a>：</p>
+
+<pre><code>Bunlde 'mileszs/ack.vim'
+</code></pre>
+
+<p>　　进行如下按键映射：</p>
+
+<pre><code>map &lt;leader&gt;a :Ack&lt;space&gt;
+</code></pre>
+
+<h3 id="常用操作-2">常用操作</h3>
+
+<ul>
+<li><code>:Ack [options] {pattern} [{directories}]</code>：在指定目录下进行查找匹配的行。</li>
+</ul>
+
+<h2 id="vim-surround">vim-surround</h2>
+
+<p>　　安装 <a href="https//github.com/tpope/vim-surround">vim-surround</a>：</p>
+
+<pre><code>git clone git://github.com/tpope/vim-surround.git ~/.vim/bundle
+</code></pre>
+
+<h3 id="常用操作-3">常用操作</h3>
+
+<ul>
+<li><p><code>cs&quot;'</code> 或 <code>cs&quot;&lt;q&gt;</code>：意味着<code>change sourroundings &quot; to '</code>，例如把：<code>&quot;Hello world!&quot;</code> 变为 <code>'Hello world!'</code> 或 <code>&lt;q&gt;Hello world!&lt;/q&gt;</code>。</p></li>
+
+<li><p><code>cst&quot;</code>： 意味着 <code>change sourroundings tag to &quot;</code>，例如把 <code>&lt;q&gt;Hello world!&lt;/q&gt;</code> 变为 <code>&quot;Hello world!&quot;</code>。</p></li>
+
+<li><p><code>ds&quot;</code>：意味着 <code>delete sourroundings &quot;</code>，例如把 <code>&quot;Hello world!&quot;</code> 变为 <code>Hello world!</code>。</p></li>
+
+<li><p><code>ysiw]</code>：意味着 <code>you surround in word ]</code>，例如把 <code>Hello world!</code> 变为 <code>[Hello] world!</code>。</p></li>
+
+<li><p><code>csw&quot;</code>：意味着 <code>you surround word &quot;</code>，例如把 <code>Hello world!</code> 变为 <code>&quot;Hello&quot; world!</code>。</p></li>
+
+<li><p><code>yss</code>：意味着 <code>you surround surroundings )</code>，例如把 <code>{Hello} world!</code> 变为 <code>({Hello} world!)</code>。</p></li>
+</ul>
+
+<h2 id="vim-repeat">vim-repeat</h2>
+
+<p>　　安装 <a href="https://github.com/tpope/vim-repeat">vim-repeat</a>：</p>
+
+<pre><code>Bundle 'tpope/vim-repeat'
+</code></pre>
+
+<p>　　按 &ldquo;.&rdquo; 键重复上次的操作。</p>
+
+<h2 id="vim-airline">vim-airline</h2>
+
+<p>　　安装 <a href="https://github.com/vim-airline/vim-airline">vim-airline</a>：</p>
+
+<pre><code>Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+</code></pre>
+
+<p>　　配置如下：</p>
+
+<pre><code>Bundle 'vim-airline/vim-airline'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+
+&quot; 是否打开tabline
+let g:airline#extensions#tabline#enabled = 1
+
+&quot; 这个是安装字体后 必须设置此项&quot;
+let g:airline_powerline_fonts = 1
+
+&quot; 设置切换Buffer快捷键&quot;
+ nnoremap &lt;leader&gt;&lt;left&gt; :bp&lt;CR&gt;
+ nnoremap &lt;leader&gt;&lt;right&gt; :bn&lt;CR&gt;
+</code></pre>
+
+<h2 id="ctags">ctags</h2>
+
+<p>安装 <a href="https://github.com/vim-scripts/ctags.vim">ctags</a>：</p>
+
+<pre><code>Plugin 'vim-scripts/ctags.vim'
+</code></pre>
+
+<h2 id="tagbar">tagbar</h2>
+
+<p>　　安装 <a href="https://github.com/majutsushi/tagbar">tagbar</a>：</p>
+
+<pre><code>Plugin 'majutsushi/tagbar'
+</code></pre>
+
+<p>配置如下：</p>
+
+<pre><code>nmap tb :TagbarToggle&lt;CR&gt;
+
+&quot; 启动时自动focus
+let g:tagbar_autofocus = 1
+
+&quot; gotags 配置
+let g:tagbar_type_go = {
+    \ 'ctagstype': 'go',
+    \ 'kinds' : [
+        \'p:package',
+        \'f:function',
+        \'v:variables',
+        \'t:type',
+        \'c:const'
+    \]
+\}
+</code></pre>
+
+<h2 id="vim-easymotion">vim-easymotion</h2>
+
+<p>　　安装 <a href="https://github.com/easymotion/vim-easymotion">vim-easymotion</a>：</p>
+
+<pre><code>Plugin 'easymotion/vim-easymotion'
+</code></pre>
+
+<p>配置如下：</p>
+
+<pre><code>map &lt;leader&gt; &lt;Plug&gt;(easymotion-prefix)
+</code></pre>
+
+<h2 id="vim-colors-solarized">vim-colors-solarized</h2>
+
+<p>安装 <a href="https://github.com/altercation/vim-colors-solarized">vim-colors-solarized</a>：</p>
+
+<pre><code>Plugin 'altercation/vim-colors-solarized'
+
+cd vim-colors-solarized/colors
+mv solarized.vim ~/.vim/colors/
+</code></pre>
+
+<h2 id="rainbow">rainbow</h2>
+
+<p>安装 <a href="https://github.com/luochen1990/rainbow">rainbow</a>：</p>
+
+<pre><code>Plugin &quot;luochen1990/rainbow&quot;
+</code></pre>
+
 <h2 id="ultisnips">ultisnips</h2>
 
-<p>安装 <a href="https://github.com/SirVer/ultisnips">ultisnips</a>：</p>
+<p>　　安装 <a href="https://github.com/SirVer/ultisnips">ultisnips</a>：</p>
 
 <pre><code>&quot; Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -278,70 +538,11 @@ let g:UltiSnipsJumpBackwardTrigger=&quot;&lt;c-z&gt;&quot;
 let g:UltiSnipsEditSplit=&quot;vertical&quot;
 </code></pre>
 
-<h2 id="ctrlp">ctrlp</h2>
-
-<p>安装 <a href="https://github.com/ctrlpvim/ctrlp.vim">ctrlp</a>：</p>
-
-<pre><code>1. Add Plugin 'ctrlpvim/ctrlp.vim' to your vimrc file.
-2. Reload your vimrc or restart
-3. Run :BundleInstall
-</code></pre>
-
-<h2 id="vim-surround">vim-surround</h2>
-
-<p>安装 <a href="https//github.com/tpope/vim-surround">vim-surround</a>：</p>
-
-<pre><code>git clone git://github.com/tpope/vim-surround.git ~/.vim/bundle
-</code></pre>
-
-<h2 id="vim-airline">vim-airline</h2>
-
-<p>安装 <a href="https://github.com/vim-airline/vim-airline">vim-airline</a>：</p>
-
-<pre><code>Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-</code></pre>
-
-<h2 id="ctags">ctags</h2>
-
-<p>安装 <a href="https://github.com/vim-scripts/ctags.vim">ctags</a>：</p>
-
-<pre><code>Plugin 'vim-scripts/ctags.vim'
-</code></pre>
-
-<h2 id="tagbar">tagbar</h2>
-
-<p>安装 <a href="https://github.com/majutsushi/tagbar">tagbar</a>：</p>
-
-<pre><code>Plugin 'majutsushi/tagbar'
-</code></pre>
-
-<h2 id="vim-easymotion">vim-easymotion</h2>
-
-<p>安装 <a href="https://github.com/easymotion/vim-easymotion">vim-easymotion</a>：</p>
-
-<pre><code>Plugin 'easymotion/vim-easymotion'
-</code></pre>
-
-<h2 id="vim-colors-solarized">vim-colors-solarized</h2>
-
-<p>安装 <a href="https://github.com/altercation/vim-colors-solarized">vim-colors-solarized</a>：</p>
-
-<pre><code>Plugin 'altercation/vim-colors-solarized'
-</code></pre>
-
 <h2 id="tabular">tabular</h2>
 
 <p>安装 <a href="https://github.com/godlygeek/tabular">tabular</a>：</p>
 
 <pre><code>Plugin 'godlygeek/tabular'
-</code></pre>
-
-<h2 id="rainbow">rainbow</h2>
-
-<p>安装 <a href="https://github.com/luochen1990/rainbow">rainbow</a>：</p>
-
-<pre><code>Plugin &quot;luochen1990/rainbow&quot;
 </code></pre>
 
 <h2 id="emmet-vim">emmet-vim</h2>
@@ -396,6 +597,16 @@ git submodule update --init --recursive
 <blockquote>
 <p>ln -s /lib64/libncurses.so.5 /lib64/libtinfo.so.5</p>
 </blockquote>
+
+<h1 id="常见问题">常见问题</h1>
+
+<ol>
+<li>问题1：当修改 leader 键为空格键后，普通空格按键会有一定延迟。</li>
+</ol>
+
+<ul>
+<li>解决办法：<a href="https://stackoverflow.com/questions/25341062/vim-let-mapleader-space-annoying-cursor-movement">参考&rdquo;vim let mapleader = “&lt;Space&gt;” annoying cursor movement&rdquo;</a>。</li>
+</ul>
 
     </div>
 

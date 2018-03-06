@@ -17,7 +17,7 @@
       <pubDate>Sun, 04 Mar 2018 20:29:45 +0800</pubDate>
       
       <guid>http://localhost:1313/post/private-vim/</guid>
-      <description>概述 这是我个人的 vim 配置过程。 下面是各个插件的安装。 Vundle 首先安装 vim 插件管理器 Vundle： git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 然后在 .vimrc 中添加下面的 Vundle 配置： set nocompatible &amp;quot; be iMproved, required filetype off &amp;quot;</description>
+      <description>概述 这是我个人的 vim 配置过程。 对于 vimscript，可以参考使用脚本编写 Vim 编辑器和 Vimscript 编程指南。 安装的各类插件 Vundle 首先安装 vim 插件管理器 Vundl</description>
     </item>
     
     <item>
