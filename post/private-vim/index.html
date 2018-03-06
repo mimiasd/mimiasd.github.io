@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-03-04T20:29:45&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-04T20:29:45&#43;08:00" />
-<meta itemprop="wordCount" content="1937">
+<meta itemprop="wordCount" content="2358">
 
 
 
@@ -198,13 +198,16 @@
 <li><a href="#vim-easymotion">vim-easymotion</a></li>
 <li><a href="#vim-colors-solarized">vim-colors-solarized</a></li>
 <li><a href="#rainbow">rainbow</a></li>
-<li><a href="#ultisnips">ultisnips</a></li>
-<li><a href="#tabular">tabular</a></li>
-<li><a href="#emmet-vim">emmet-vim</a></li>
 <li><a href="#vim-indent-guides">vim-indent-guides</a></li>
+<li><a href="#ultisnips">ultisnips</a></li>
 <li><a href="#vim-go">vim-go</a></li>
 <li><a href="#gocode">gocode</a></li>
 <li><a href="#youcompleteme">YouCompleteMe</a></li>
+<li><a href="#incsearch">incsearch</a></li>
+<li><a href="#gundo">gundo</a></li>
+<li><a href="#delimitmate">delimitMate</a></li>
+<li><a href="#syntastic">syntastic</a></li>
+<li><a href="#vim-startify">vim-startify</a></li>
 </ul></li>
 <li><a href="#常见问题">常见问题</a></li>
 </ul>
@@ -504,7 +507,7 @@ let g:tagbar_type_go = {
 
 <h2 id="vim-colors-solarized">vim-colors-solarized</h2>
 
-<p>安装 <a href="https://github.com/altercation/vim-colors-solarized">vim-colors-solarized</a>：</p>
+<p>　　安装 <a href="https://github.com/altercation/vim-colors-solarized">vim-colors-solarized</a>：</p>
 
 <pre><code>Plugin 'altercation/vim-colors-solarized'
 
@@ -512,70 +515,82 @@ cd vim-colors-solarized/colors
 mv solarized.vim ~/.vim/colors/
 </code></pre>
 
+<p>　　配置如下：</p>
+
+<pre><code>syntax enable
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast=&quot;normal&quot;
+let g:solarized_visibility=&quot;normal&quot;
+
+set background=dark
+
+colorscheme solarized
+</code></pre>
+
 <h2 id="rainbow">rainbow</h2>
 
-<p>安装 <a href="https://github.com/luochen1990/rainbow">rainbow</a>：</p>
+<p>　　安装 <a href="https://github.com/luochen1990/rainbow">rainbow</a>：</p>
 
 <pre><code>Plugin &quot;luochen1990/rainbow&quot;
 </code></pre>
+
+<p>　　配置如下：</p>
+
+<pre><code>let g:rainbow_active = 1 
+</code></pre>
+
+<h2 id="vim-indent-guides">vim-indent-guides</h2>
+
+<p>　　安装 <a href="https://github.com/nathanaelkane/vim-indent-guides">vim-indent-guides</a>：</p>
+
+<pre><code>Plugin 'nathanaelkane/vim-indent-guides'
+</code></pre>
+
+<p>　　对齐线。</p>
 
 <h2 id="ultisnips">ultisnips</h2>
 
 <p>　　安装 <a href="https://github.com/SirVer/ultisnips">ultisnips</a>：</p>
 
-<pre><code>&quot; Track the engine.
-Plugin 'SirVer/ultisnips'
-
-&quot; Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-&quot; Trigger configuration. Do not use &lt;tab&gt; if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger=&quot;&lt;tab&gt;&quot;
-let g:UltiSnipsJumpForwardTrigger=&quot;&lt;c-b&gt;&quot;
-let g:UltiSnipsJumpBackwardTrigger=&quot;&lt;c-z&gt;&quot;
-
-&quot; If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit=&quot;vertical&quot;
-</code></pre>
-
-<h2 id="tabular">tabular</h2>
-
-<p>安装 <a href="https://github.com/godlygeek/tabular">tabular</a>：</p>
-
-<pre><code>Plugin 'godlygeek/tabular'
-</code></pre>
-
-<h2 id="emmet-vim">emmet-vim</h2>
-
-<p>安装 <a href="https://github.com/mattn/emmet-vim">emmet-vim</a>：</p>
-
-<pre><code>Plugin 'mattn/emmet-vim'
-</code></pre>
-
-<h2 id="vim-indent-guides">vim-indent-guides</h2>
-
-<p>安装 <a href="https://github.com/nathanaelkane/vim-indent-guides">vim-indent-guides</a>：</p>
-
-<pre><code>Plugin 'nathanaelkane/vim-indent-guides'
+<pre><code>Plugin 'SirVer/ultisnips'
 </code></pre>
 
 <h2 id="vim-go">vim-go</h2>
 
-<p>安装 <a href="https://github.com/fatih/vim-go">vim-go</a>：</p>
+<p>　　安装 <a href="https://github.com/fatih/vim-go">vim-go</a>：</p>
 
 <pre><code>Plugin 'fatih/vim-go'
 </code></pre>
 
+<p>　　配置如下：</p>
+
+<pre><code>let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+au FileType go nmap &lt;leader&gt;r &lt;Plug&gt;(go-run)
+au FileType go nmap &lt;Leader&gt;gd &lt;Plug&gt;(go-doc)
+au FileType go nmap &lt;Leader&gt;i &lt;Plug&gt;(go-imports)
+au FileType go nmap &lt;Leader&gt;s &lt;Plug&gt;(go-implements)
+au FileType go nmap &lt;Leader&gt;f &lt;Plug&gt;(gofmt)
+au FileType go nmap &lt;Leader&gt;t &lt;Plug&gt;(go-test)
+</code></pre>
+
 <h2 id="gocode">gocode</h2>
 
-<p>安装 <a href="https://github.com/nsf/gocode">gocode</a>：</p>
+<p>　　安装 <a href="https://github.com/nsf/gocode">gocode</a>：</p>
 
 <pre><code>Plugin 'nsf/gocode', {'rtp': 'vim/'}
 </code></pre>
 
+<p>　　配置如下：</p>
+
+<pre><code>filetype plugin on
+imap &lt;C-a&gt; &lt;C-x&gt;&lt;C-o&gt;
+</code></pre>
+
 <h2 id="youcompleteme">YouCompleteMe</h2>
 
-<p>安装 <a href="https://github.com/Valloric/YouCompleteMe">YouCompleteMe</a>：</p>
+<p>　　安装 <a href="https://github.com/Valloric/YouCompleteMe">YouCompleteMe</a>：</p>
 
 <pre><code>git clone git://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle
 
@@ -586,17 +601,110 @@ git submodule update --init --recursive
 ./install.py --clang-completer --go-completer --js-completer
 </code></pre>
 
-<p>当安装完成后打开 vim，可能出现以下错误：</p>
+<p>　　配置如下：</p>
 
-<blockquote>
-<p>ImportError: libtinfo.so.5 no exsit</p>
-</blockquote>
+<pre><code>set runtimepath+=~/.vim/bundle/YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1           &quot; 开启 YCM 基于标签引擎
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 &quot; 注释与字符串中的内容也用于补全
+let g:syntastic_ignore_files=[&quot;.*\.py$&quot;]
+let g:ycm_seed_identifiers_with_syntax = 1                  &quot; 语法关键字补全
+let g:ycm_complete_in_comments = 1                          &quot; 在注释输入中也能补全
+let g:ycm_complete_in_strings = 1                           &quot; 在字符串输入中也能补全
+let g:ycm_key_list_select_completion = ['&lt;c-n&gt;', '&lt;Down&gt;']  &quot; 映射按键, 没有这个会拦截掉tab
+&quot;inoremap &lt;expr&gt; &lt;CR&gt; pumvisible() ? &quot;\&lt;C-y&gt;&quot; : &quot;\&lt;CR&gt;&quot; |    &quot; 回车即选中当前项
+let g:ycm_error_symbol = '&gt;&gt;'
+let g:ycm_warning_symbol = '&gt;*'
+nnoremap &lt;leader&gt;gd :YcmCompleter GoToDeclaration&lt;CR&gt;
+nnoremap &lt;leader&gt;gf :YcmCompleter GoToDefinition&lt;CR&gt;
+nnoremap &lt;leader&gt;gg :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;
+nmap &lt;F4&gt; :YcmDiags&lt;CR&gt;
 
-<p>解决方法是：</p>
+</code></pre>
 
-<blockquote>
-<p>ln -s /lib64/libncurses.so.5 /lib64/libtinfo.so.5</p>
-</blockquote>
+<h2 id="incsearch">incsearch</h2>
+
+<p>　　安装 <a href="https://github.com/haya14busa/incsearch.vim">incsearch</a>：</p>
+
+<pre><code>Plugin 'haya14busa/incsearch.vim'
+</code></pre>
+
+<p>　　配置如下：</p>
+
+<pre><code>set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+
+map /  &lt;Plug&gt;(incsearch-forward)
+map ?  &lt;Plug&gt;(incsearch-backward)
+map g/ &lt;Plug&gt;(incsearch-stay)
+</code></pre>
+
+<h2 id="gundo">gundo</h2>
+
+<p>　　安装 <a href="https://github.com/sjl/gundo.vim">gundo.vim</a>：</p>
+
+<pre><code>Bundle 'sjl/gundo.vim'
+</code></pre>
+
+<p>　　可以查看编辑记录，配置如下：</p>
+
+<pre><code>nnoremap &lt;leader&gt;u :GundoToggle&lt;CR&gt;
+</code></pre>
+
+<h2 id="delimitmate">delimitMate</h2>
+
+<p>　　安装 <a href="https://github.com/Raimondi/delimitMate">delimitMate</a>：</p>
+
+<pre><code>Bundle 'Raimondi/delimitMate'
+</code></pre>
+
+<p>　　括号等符号自动匹配，配置如下：</p>
+
+<pre><code>let g:delimitMate_expand_cr = 1
+</code></pre>
+
+<h2 id="syntastic">syntastic</h2>
+
+<p>　　安装 <a href="https://github.com/vim-syntastic/syntastic">syntastic</a>：</p>
+
+<pre><code>Bundle 'scrooloose/syntastic'
+</code></pre>
+
+<p>　　语法检验，配置如下：</p>
+
+<pre><code>let g:syntastic_error_symbol='&gt;&gt;'
+let g:syntastic_warning_symbol='&gt;'
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_highlighting=1
+let g:syntastic_python_checkers=['pyflakes'] &quot; 使用pyflakes,速度比pylint快
+let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+let g:syntastic_html_checkers=['tidy', 'jshint']
+&quot; 修改高亮的背景色, 适应主题
+highlight SyntasticErrorSign guifg=white guibg=black
+
+&quot; to see error location list
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 5
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        &quot; Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+nnoremap &lt;Leader&gt;s :call ToggleErrors()&lt;cr&gt;
+&quot; nnoremap &lt;Leader&gt;sn :lnext&lt;cr&gt;
+&quot; nnoremap &lt;Leader&gt;sp :lprevious&lt;cr&gt;
+</code></pre>
+
+<h2 id="vim-startify">vim-startify</h2>
+
+<p>安装 <a href="https://github.com/mhinz/vim-startify">vim-startify</a>：</p>
+
+<pre><code>Bundle 'mhinz/vim-startify'
+</code></pre>
 
 <h1 id="常见问题">常见问题</h1>
 
@@ -606,6 +714,14 @@ git submodule update --init --recursive
 
 <ul>
 <li>解决办法：<a href="https://stackoverflow.com/questions/25341062/vim-let-mapleader-space-annoying-cursor-movement">参考&rdquo;vim let mapleader = “&lt;Space&gt;” annoying cursor movement&rdquo;</a>。</li>
+</ul>
+
+<ol>
+<li>问题2：安装 YCM 后，打开 vim 出现 &ldquo;ImportError: libtinfo.so.5 no exsit&rdquo; 错误。</li>
+</ol>
+
+<ul>
+<li>解决办法： ln -s /lib64/libncurses.so.5 /lib64/libtinfo.so.5</li>
 </ul>
 
     </div>
