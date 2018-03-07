@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-03-04T20:29:45&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-04T20:29:45&#43;08:00" />
-<meta itemprop="wordCount" content="2358">
+<meta itemprop="wordCount" content="2403">
 
 
 
@@ -208,6 +208,8 @@
 <li><a href="#delimitmate">delimitMate</a></li>
 <li><a href="#syntastic">syntastic</a></li>
 <li><a href="#vim-startify">vim-startify</a></li>
+<li><a href="#tabular">tabular</a></li>
+<li><a href="#vim-markdown">vim-markdown</a></li>
 </ul></li>
 <li><a href="#常见问题">常见问题</a></li>
 </ul>
@@ -701,9 +703,29 @@ nnoremap &lt;Leader&gt;s :call ToggleErrors()&lt;cr&gt;
 
 <h2 id="vim-startify">vim-startify</h2>
 
-<p>安装 <a href="https://github.com/mhinz/vim-startify">vim-startify</a>：</p>
+<p>　　安装 <a href="https://github.com/mhinz/vim-startify">vim-startify</a>：</p>
 
 <pre><code>Bundle 'mhinz/vim-startify'
+</code></pre>
+
+<h2 id="tabular">tabular</h2>
+
+<p>　　安装 <a href="https://github.com/godlygeek/tabular">tabular</a>：</p>
+
+<pre><code>Bundle 'godlygeek/tabular'
+</code></pre>
+
+<h2 id="vim-markdown">vim-markdown</h2>
+
+<p>　　安装 <a href="https://github.com/suan/vim-instant-markdown">vim-markdown</a>：</p>
+
+<pre><code>Bundle 'plasticboy/vim-markdown'
+</code></pre>
+
+<p>配置如下：</p>
+
+<pre><code>let g:vim_markdown_folding_disabled = 1
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 </code></pre>
 
 <h1 id="常见问题">常见问题</h1>
