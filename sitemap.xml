@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/jwt/</loc>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/docker/</loc>
+    <lastmod>2018-03-08T10:18:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/private-vim/</loc>
     <lastmod>2018-03-04T20:29:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -46,14 +60,28 @@
   
   <url>
     <loc>http://localhost:1313/categories/auth/</loc>
-    <lastmod>2018-02-28T17:59:26+08:00</lastmod>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2018-02-28T17:59:26+08:00</lastmod>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2018-03-08T10:18:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/docker/</loc>
+    <lastmod>2018-03-08T10:18:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -94,15 +122,22 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/jwt/</loc>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2018-03-04T20:29:45+08:00</lastmod>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-03-04T20:29:45+08:00</lastmod>
+    <lastmod>2018-03-09T18:00:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

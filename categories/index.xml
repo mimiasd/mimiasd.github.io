@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Feb 2018 17:59:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Mar 2018 18:00:33 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Auth</title>
       <link>http://localhost:1313/categories/auth/</link>
-      <pubDate>Wed, 28 Feb 2018 17:59:26 +0800</pubDate>
+      <pubDate>Fri, 09 Mar 2018 18:00:33 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/categories/docker/</link>
+      <pubDate>Thu, 08 Mar 2018 10:18:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/docker/</guid>
       <description></description>
     </item>
     

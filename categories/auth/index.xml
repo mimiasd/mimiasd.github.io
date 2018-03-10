@@ -6,10 +6,19 @@
     <description>Recent content in Auth on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Feb 2018 17:59:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Mar 2018 18:00:33 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/auth/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jwt</title>
+      <link>http://localhost:1313/post/jwt/</link>
+      <pubDate>Fri, 09 Mar 2018 18:00:33 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jwt/</guid>
+      <description>JWT RFC JWT JSON Web Token(JWT) 是一个紧凑的，URL 安全的代表在两部分传输要求描述。JWT 中的要求被编码到一个 JSON 对象中，被用作一个 JSON 网络签名(JWS)的负载，或</description>
+    </item>
     
     <item>
       <title>Auth2.0</title>
