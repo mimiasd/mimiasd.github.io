@@ -6,10 +6,75 @@
     <description>Recent content on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Mar 2018 18:00:33 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Mar 2018 16:57:49 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Semver</title>
+      <link>http://localhost:1313/post/semver/</link>
+      <pubDate>Thu, 22 Mar 2018 16:57:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/semver/</guid>
+      <description>Semantic Versioning 2.0.0 　Given a version number MAJOR.MINOR.PATCH, increment the:
+ MAJOR version when you make incompatible API changes, MINOR version when you add functionality in a backwards-compatible manner, and PATCH version when you make backwards-compatible bug fixes.  　Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.</description>
+    </item>
+    
+    <item>
+      <title>Computer Architecture</title>
+      <link>http://localhost:1313/post/computer-architecture/</link>
+      <pubDate>Fri, 16 Mar 2018 17:54:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/computer-architecture/</guid>
+      <description> Computer number format  Bit
+ Nibble
+ Byte
+ Bitstream
+ Data type
+  Character encoding  ASCII
+ Unicode
+ UTF-8
+ UTF-16
+ UTF-32
+ ascii_unicode_and_utf-8
+ unicode
+  assembly language </description>
+    </item>
+    
+    <item>
+      <title>Go Commands</title>
+      <link>http://localhost:1313/post/go-commands/</link>
+      <pubDate>Wed, 14 Mar 2018 15:46:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/go-commands/</guid>
+      <description>go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的</description>
+    </item>
+    
+    <item>
+      <title>Golang Learning</title>
+      <link>http://localhost:1313/post/golang-learn/</link>
+      <pubDate>Tue, 13 Mar 2018 17:56:13 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/golang-learn/</guid>
+      <description>Foundational Golang  A Tour of Go
+ How to Write Go Code
+ The Go Programming Language Specification
+ Effective Go
+  Golang Tools  Go Tools  Golang Dianostics  Diagnostics
+ delve
+ gdb
+  Golang FAQ  Frequently Asked Questions (FAQ)  Golang Wiki  Wiki  Golang Books  Learning go  Advanced Golang Go&amp;rsquo;s Assembler A Quick Guide to Go&amp;rsquo;s Assembler  GOOS=linux GOARCH=amd64 go tool compile -S x.</description>
+    </item>
+    
+    <item>
+      <title>Jws</title>
+      <link>http://localhost:1313/post/jws/</link>
+      <pubDate>Sun, 11 Mar 2018 13:40:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jws/</guid>
+      <description>JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &amp;ldquo;JWE&amp;rdquo; 中。 1. 简介 JWS 表</description>
+    </item>
     
     <item>
       <title>Jwt</title>

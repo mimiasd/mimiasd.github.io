@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jws on Mimiasd&#39;s experience</title>
+    <link>http://localhost:1313/tags/jws/</link>
+    <description>Recent content in Jws on Mimiasd&#39;s experience</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Mar 2018 13:40:03 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/jws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jws</title>
+      <link>http://localhost:1313/post/jws/</link>
+      <pubDate>Sun, 11 Mar 2018 13:40:03 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jws/</guid>
+      <description>JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &amp;ldquo;JWE&amp;rdquo; 中。 1. 简介 JWS 表</description>
+    </item>
+    
+  </channel>
+</rss>

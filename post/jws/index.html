@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Jws - Mimiasd&#39;s experience</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mimiasd" />
+  <meta name="description" content="JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &amp;ldquo;JWE&amp;rdquo; 中。 1. 简介 JWS 表" />
+<meta name="keywords" content="jws" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38-DEV" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/jws/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Jws" />
+<meta property="og:description" content="JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &ldquo;JWE&rdquo; 中。 1. 简介 JWS 表" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/jws/" />
+
+
+
+<meta property="article:published_time" content="2018-03-11T13:40:03&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-11T13:40:03&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Jws">
+<meta itemprop="description" content="JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &ldquo;JWE&rdquo; 中。 1. 简介 JWS 表">
+
+
+<meta itemprop="datePublished" content="2018-03-11T13:40:03&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-11T13:40:03&#43;08:00" />
+<meta itemprop="wordCount" content="1470">
+
+
+
+<meta itemprop="keywords" content="jws," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jws"/>
+<meta name="twitter:description" content="JWS RFC JWS JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &ldquo;JWE&rdquo; 中。 1. 简介 JWS 表"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">MIMIASD</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">MIMIASD</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Jws</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/auth/"> auth </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#jws">JWS</a></li>
+<li><a href="#1-简介">1. 简介</a></li>
+<li><a href="#2-术语">2. 术语</a></li>
+<li><a href="#3-jws-概述">3. JWS 概述</a>
+<ul>
+<li><a href="#3-1-jws-compact-serialization-概述">3.1 JWS Compact Serialization 概述</a></li>
+<li><a href="#3-2-jws-json-serialization-概述">3.2 JWS JSON Serialization 概述</a></li>
+<li><a href="#3-3-jws-的例子">3.3 JWS 的例子</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<blockquote>
+<p><a href="https://tools.ietf.org/html/rfc7515">JWS RFC</a></p>
+</blockquote>
+
+<h1 id="jws">JWS</h1>
+
+<p>　　JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &ldquo;JWE&rdquo; 中。</p>
+
+<h1 id="1-简介">1. 简介</h1>
+
+<p>　　JWS 表示被数字签名或信息识别码保证的使用基于 JSON 数据结构的内容。JWS 的加密机制提供了对任意八位元组的完整性保护。有两个对应的 JWSs 序列化方法。JWS Compact Serialization 是一个紧凑的，URL 安全的表示，对应于空格严格的环境，例如 HTTP 授权头和 URI 请求参数。JWS JSON Serialization 表示把 JWSs 作为一个 JSON 对象，使多个签名或 MACS 作用于同样的内容。它们同时使用同样的加密底层。</p>
+
+<p>　　该说明书用的加密算法定义在 JWA(JSON Web Algorithms) 中。相对应的加密功能定义在 &ldquo;JWE&rdquo; 中。</p>
+
+<h1 id="2-术语">2. 术语</h1>
+
+<p>　　下面是该说明书中的文档：</p>
+
+<ul>
+<li><p>JSON Web Signature(JWS)</p>
+
+<ul>
+<li>一个表示被数字签名或信息识别码处理的消息。</li>
+</ul></li>
+
+<li><p>JOSE Header</p>
+
+<ul>
+<li>包含加密操作和使用参数的 JSON 对象。JOSE(JSON Object Signing and Encryption) Header 由一系列头部参数组成。</li>
+</ul></li>
+
+<li><p>JWS Payload</p>
+
+<ul>
+<li>被保证的八位元组序列 - 即消息。负载可以包含一个任意的八位元组。</li>
+</ul></li>
+
+<li><p>JWS Signature</p>
+
+<ul>
+<li>通过数字签名或 信息识别码来保护 JWS 头部和负载。</li>
+</ul></li>
+
+<li><p>Header Parameter</p>
+
+<ul>
+<li>一个 名字/ 值 对，是 JOSE Header 的成员。</li>
+</ul></li>
+
+<li><p>JWS Protected Header</p>
+
+<ul>
+<li>包含头部参数的被 JWS 数字签名或信息识别码操作进行完整性保护的 JSON 对象。对于 JWS Compact Serialization，这包括了整个的 JOSE Header。对于 JWS JSON Serialization，这是一个 JOSE Header 的一部分。</li>
+</ul></li>
+
+<li><p>JWS Unprotected Header</p>
+
+<ul>
+<li>没有进行完整性保护的头部。当使用 JWS JSON Serialization 时，这可以被提出。</li>
+</ul></li>
+
+<li><p>Base64Url Encoding</p>
+
+<ul>
+<li>URL 和 filename 安全的 Base64 编码字符集。</li>
+</ul></li>
+
+<li><p>JWS Signing Input</p>
+
+<ul>
+<li>数字签名或信息识别码计算的输出。它的内容是：ASCII(BASE64URL(UTF8(JWS Protected Header)) || &lsquo;.&rsquo; || BASE64URL(JWS Payload))。</li>
+</ul></li>
+
+<li><p>JWS Compact Serialization</p>
+
+<ul>
+<li>JWS 一个紧凑的，URL 安全的字符串表示。</li>
+</ul></li>
+
+<li><p>JWS JSON Serialization</p>
+
+<ul>
+<li>JWS 的 JSON 对象表示。和上面的不同，JSON 对象表示使用了多个数字签名或信息识别码作用于同样的内容。这对间接性和 URL 安全性都没有优化。</li>
+</ul></li>
+
+<li><p>Unsecured JWS</p>
+
+<ul>
+<li>没有提供完整性保护的 JWS。使用 &ldquo;alg&rdquo; 参数设为 &ldquo;none&rdquo;。</li>
+</ul></li>
+
+<li><p>Collision-Resistant Name</p>
+
+<ul>
+<li>一个高度避免冲突的命名空间。</li>
+</ul></li>
+
+<li><p>StringOrURI</p>
+
+<ul>
+<li>一个 JSON 字符串值，包括需要的任意字符串值都可能被使用，包括 &ldquo;:&ldquo;。</li>
+</ul></li>
+</ul>
+
+<h1 id="3-jws-概述">3. JWS 概述</h1>
+
+<p>　　一个 JWS 有以下逻辑值：</p>
+
+<ul>
+<li>JOSE Header</li>
+<li>JWS Payload</li>
+<li>JWS Signature</li>
+</ul>
+
+<p>　　对于一个 JWS，JOSE Header 是下面这些成员的组合：</p>
+
+<ul>
+<li>JWS Protected Header</li>
+<li>JWS Unprotected Header</li>
+</ul>
+
+<p>　　两个序列化方法都使用 base64URL 编码 JWS Protected Header，JWS Payload 和 JWS Signature，因为 JSON 缺少一个直接表达任意八位元组的方法。</p>
+
+<h2 id="3-1-jws-compact-serialization-概述">3.1 JWS Compact Serialization 概述</h2>
+
+<p>　　在 JWS Compact Serialization 中，没有使用 JWS Unprotected Header。在这个情况下，JOSE Header 和 JWS Protected Header 是一样的。</p>
+
+<p>　　在 JWS Compact Serialization 中，一个 JWS 由以下串联表示：</p>
+
+<pre><code>BASE64URL(UTF8(JWS Protected Header)) || '.' ||
+BASE64URL(JWS Payload) || '.' ||
+BASE64URL(JWS Signature)
+</code></pre>
+
+<h2 id="3-2-jws-json-serialization-概述">3.2 JWS JSON Serialization 概述</h2>
+
+<p>　　在 JWS JSON Serialization 中，一个或同时 JWS Protected Header和 JWS UNProtected Header 必须被使用。在这种情况下，JOSE Header 是两者的联合。</p>
+
+<p>　　在一个 JWS JSON Serialization 中，一个 JWS 表示包含以下一些或全部的四个成员：</p>
+
+<ul>
+<li>&ldquo;protected&rdquo;，参数为：BASE64URL(UTF8(JWS Protected Header))</li>
+<li>&ldquo;header&rdquo;，参数为： JWS Unprotected Header</li>
+<li>&ldquo;payload&rdquo;，参数为：BASE64URL(JWS Payload)</li>
+<li>&ldquo;signature&rdquo;，参数为：BASE64URL(JWS Signature)</li>
+</ul>
+
+<p>　　三个基于 Base64Url 编码的结果字符串和 JWS Unprotected Header 被表达为一个 JSON 对象的成员。</p>
+
+<h2 id="3-3-jws-的例子">3.3 JWS 的例子</h2>
+
+<p>　　该节提供一个 JWS 的例子。</p>
+
+<p>　　接下来的 JWS Protected Header 声明为一个 JWT，JWS 的负载使用的是 HMAC SHA-256 算法保护：</p>
+
+<pre><code>{&quot;typ&quot;:&quot;JWT&quot;,
+ &quot;alg&quot;:&quot;HS256&quot;}
+</code></pre>
+
+<p>　　编码该受保护的头部使用 BASE64URL(UTF8(JWS Protected Header)) 方法，得到如下值：</p>
+
+<pre><code>eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
+
+</code></pre>
+
+<p>　　下面的表述的 UTF-8 形式作为 JWS 的负载(负载可以为任意的内容，不需要只被描述为一个 JSON 对象)：</p>
+
+<pre><code>{&quot;iss&quot;:&quot;joe&quot;,
+ &quot;exp&quot;:1300819380,
+ &quot;http://example.com/is_root&quot;:true}
+</code></pre>
+
+<p>　　使用 Base64URL(JWS Payload) 编码 JWS Payload，得到如下值：</p>
+
+<pre><code>eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
+</code></pre>
+
+<p>　　计算 JWS Signing 输入 ASCII(BASE64URL(UTF8(JWS Protected Header)) || &lsquo;.&rsquo; || BASE64URL(JWS Payload)) 的 HMAC，得到 BASE64URL(JWS Signature) 的值如下：</p>
+
+<pre><code>dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+</code></pre>
+
+<p>　　把这些值按 Header.Payload.Signature 的顺序连接起来，组成完整的 JWS 表述，使用 JWS Compact Serialization：</p>
+
+<pre><code>eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
+.
+eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ
+.
+dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+</code></pre>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mimiasd</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-11</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/jws/">jws</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/golang-learn/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Golang Learning</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/jwt/">
+            <span class="next-text nav-default">Jwt</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:thanatos_y@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mimiasd" class="iconfont icon-github" title="github"></a>
+  
+    
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+	由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+	主题 - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mimiasd</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

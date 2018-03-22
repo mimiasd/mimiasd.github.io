@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Go Commands - Mimiasd&#39;s experience</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="mimiasd" />
+  <meta name="description" content="go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的" />
+<meta name="keywords" content="go, command" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38-DEV" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/go-commands/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Go Commands" />
+<meta property="og:description" content="go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/go-commands/" />
+
+
+
+<meta property="article:published_time" content="2018-03-14T15:46:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-14T15:46:48&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Go Commands">
+<meta itemprop="description" content="go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的">
+
+
+<meta itemprop="datePublished" content="2018-03-14T15:46:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-14T15:46:48&#43;08:00" />
+<meta itemprop="wordCount" content="444">
+
+
+
+<meta itemprop="keywords" content="go,command," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Commands"/>
+<meta name="twitter:description" content="go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">MIMIASD</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">MIMIASD</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Go Commands</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-14 </span>
+        <div class="post-category">
+            
+              <a href="/categories/go/"> go </a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#go-build">go build</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="go-build">go build</h1>
+
+<p>　　通过依赖和导入路径的名字来构建编译包，但不会安装结果。</p>
+
+<p>　　如果构建的参数是一系列的 <code>.go</code> 文件，那么 build 是把它们当做单个包的源文件。</p>
+
+<p>　　当编译一个单独的 main 包时，build 把结果的可执行文件输出为第一个源文件命名的输出文件。</p>
+
+<p>　　当编译多个包时或者一个单独的非 main 包时，build 编译这些包，但丢弃掉结果内容，只是用来检测这些包是否能够被编译。</p>
+
+<p>　　当编译包时， build 忽略那些 &ldquo;_test.go&rdquo; 结尾的文件。</p>
+
+<p>　　&rsquo;-o&rsquo; 参数只允许编译单个包，强制 build 把结果可执行文件或对象命名为该命名的输出文件，而不是默认的行为。</p>
+
+<p>　　&rsquo;-i&rsquo; 参数安装目标依赖的包。</p>
+
+<p>　　下面的 build 参数被 build、clean、get、install、list、run 和 test 命令共享：</p>
+
+<pre><code>-a 
+      强制重新构建已经最新的包。
+-n
+      打印命令，但不运行它们。
+-p n 
+      可以被同时运行的程序的数量，例如构建命令、测试二进制文件。默认是 CPUs 的可用数量。
+-race
+      开启数据竞争探测。只支持 linux/amd64, freebsd/amd64, darwin/amd64 and windows/amd64.
+-msan
+      开启内存检测交互。只支持 linux/amd64，且 Clang/LLVM 为其本机的 C 编译器。
+-v
+      打印被编译的包名。
+-work
+      打印暂时的工作目录名，当存在时不删除它。
+-x
+      打印命令。
+</code></pre>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">mimiasd</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-14</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/go/">go</a>
+          
+          <a href="/tags/command/">command</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/computer-architecture/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Computer Architecture</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/golang-learn/">
+            <span class="next-text nav-default">Golang Learning</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:thanatos_y@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mimiasd" class="iconfont icon-github" title="github"></a>
+  
+    
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+	由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+	主题 - 
+	<a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">mimiasd</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Mimiasd&#39;s experience</title>
+    <link>http://localhost:1313/tags/go/</link>
+    <description>Recent content in Go on Mimiasd&#39;s experience</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Mar 2018 15:46:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Commands</title>
+      <link>http://localhost:1313/post/go-commands/</link>
+      <pubDate>Wed, 14 Mar 2018 15:46:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/go-commands/</guid>
+      <description>go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的</description>
+    </item>
+    
+    <item>
+      <title>Golang Learning</title>
+      <link>http://localhost:1313/post/golang-learn/</link>
+      <pubDate>Tue, 13 Mar 2018 17:56:13 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/golang-learn/</guid>
+      <description>Foundational Golang  A Tour of Go
+ How to Write Go Code
+ The Go Programming Language Specification
+ Effective Go
+  Golang Tools  Go Tools  Golang Dianostics  Diagnostics
+ delve
+ gdb
+  Golang FAQ  Frequently Asked Questions (FAQ)  Golang Wiki  Wiki  Golang Books  Learning go  Advanced Golang Go&amp;rsquo;s Assembler A Quick Guide to Go&amp;rsquo;s Assembler  GOOS=linux GOARCH=amd64 go tool compile -S x.</description>
+    </item>
+    
+  </channel>
+</rss>

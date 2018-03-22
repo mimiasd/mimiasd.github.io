@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Mimiasd&#39;s experience</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Mar 2018 18:00:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 13:40:03 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Auth</title>
       <link>http://localhost:1313/categories/auth/</link>
-      <pubDate>Fri, 09 Mar 2018 18:00:33 +0800</pubDate>
+      <pubDate>Sun, 11 Mar 2018 13:40:03 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer</title>
+      <link>http://localhost:1313/categories/computer/</link>
+      <pubDate>Fri, 16 Mar 2018 17:54:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/computer/</guid>
       <description></description>
     </item>
     
@@ -35,6 +44,33 @@
       <pubDate>Wed, 28 Feb 2018 11:11:40 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/categories/go/</link>
+      <pubDate>Wed, 14 Mar 2018 15:46:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>http://localhost:1313/categories/golang/</link>
+      <pubDate>Tue, 13 Mar 2018 17:56:13 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Specification</title>
+      <link>http://localhost:1313/categories/specification/</link>
+      <pubDate>Thu, 22 Mar 2018 16:57:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/specification/</guid>
       <description></description>
     </item>
     

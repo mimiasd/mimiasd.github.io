@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command on Mimiasd&#39;s experience</title>
+    <link>http://localhost:1313/tags/command/</link>
+    <description>Recent content in Command on Mimiasd&#39;s experience</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Mar 2018 15:46:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Commands</title>
+      <link>http://localhost:1313/post/go-commands/</link>
+      <pubDate>Wed, 14 Mar 2018 15:46:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/go-commands/</guid>
+      <description>go build 通过依赖和导入路径的名字来构建编译包，但不会安装结果。 如果构建的参数是一系列的 .go 文件，那么 build 是把它们当做单个包的源文件。 当编译一个单独的</description>
+    </item>
+    
+  </channel>
+</rss>
